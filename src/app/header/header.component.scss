@@ -1,0 +1,24 @@
+h1{
+    text-align: center;
+    color: turquoise;
+}
+nav{
+    position: fixed;
+    width: 15%;
+    height: 100vh;
+    background-color: rgb(30, 30, 30);
+    color: whitesmoke;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    ul{
+        margin: 0;
+        padding: 0;
+        padding-block: 1rem;
+        border-bottom: 2px solid rgb(50, 50, 50);
+        border-top: 2px solid rgb(50, 50, 50);
+        
+    }
+}

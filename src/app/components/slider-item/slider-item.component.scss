@@ -1,0 +1,87 @@
+:host{
+    perspective: 1000px;
+}
+.slide{
+    width: 70vw;
+    height: 100%;
+    background-color: transparent;
+    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: whitesmoke;
+
+    .background{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        z-index: -100;
+        img{
+            width: 100%;
+        }
+    }
+
+    .front{
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(rgb(0,0,0,0.5), rgb(0,0,0,1));
+        display: flex;
+        justify-content: start;
+        align-items: end;
+
+        .movie-information{
+            height: fit-content;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            margin: 3rem;
+            h1{
+                font-family: "Boldonse", system-ui;
+                font-size: 3rem;
+            }
+            .information{
+                span{
+                    margin-right: 1rem;
+                    font-weight: bold;
+                }
+            }
+            p{
+                opacity: 0.8;
+            }
+
+            .button-group{
+                display: flex;
+
+                button{
+                    all: unset;
+                    margin-right: 1rem;
+                    padding: 0.5rem;
+                    border: 2px solid whitesmoke;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: background-color 0.3s ease-out;
+                    font-weight: bold;
+
+                    &:hover{
+                        background-color: whitesmoke;
+                        color: black;
+                    }
+                }
+                #info{
+                    background-color: whitesmoke;
+                    color: black;
+                    &:hover{
+                        background-color: transparent;
+                        color: whitesmoke;
+                    }
+                }
+            }
+
+        }
+
+    }
+}

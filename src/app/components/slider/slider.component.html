@@ -1,0 +1,9 @@
+<div class="slider">
+    <div appSlide [currIndex] = "currIndex()"  class="slide-wrapper" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+        @for (item of items; track $index) {
+            <app-slider-item />
+        }
+    </div>
+</div>
+<button (click)="moveLeft()" class="left"></button>
+<button (click)="moveRight()" class="right"></button>

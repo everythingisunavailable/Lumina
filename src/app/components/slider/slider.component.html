@@ -1,7 +1,7 @@
 <div class="slider">
-    <div appSlide [currIndex] = "currIndex()"  class="slide-wrapper" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
-        @for (item of items; track $index) {
-            <app-slider-item />
+    <div appSlide [slides]="slides()" [currIndex] = "currIndex()"  class="slide-wrapper" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+        @for (movie of movies; track $index) {
+            <app-slider-item [movie]="movie" />
         }
     </div>
 </div>

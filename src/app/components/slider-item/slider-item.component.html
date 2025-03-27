@@ -4,9 +4,12 @@
     <div class="front">
 
         <div class="movie-information">
-            <h1>{{movie().title}}</h1>
+            <h1>{{movie().title || movie().name}}</h1>
             <div class="information">
-                <span id="type">Movie</span><span id="date">{{movie().release_date}}</span><span id="rating">⭐{{movie().vote_average}}</span>
+                @if (movie().origin_country && movie().origin_country.includes('JP') ){<span id="type">Anime</span>}
+                @if (movie().title) {<span id="type">Movie</span> <span id="date">{{movie().release_date}}</span>}
+                @if (movie().name) {<span id="type">Tv Show</span> <span id="date">{{movie().first_air_date}}</span>}
+                <span id="rating">⭐{{movie().vote_average}}</span>
             </div>
             <p>{{movie().overview}}</p>
             <div class="button-group">

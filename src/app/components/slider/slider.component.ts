@@ -1,4 +1,4 @@
-import { AfterViewChecked, AfterViewInit, Component, ElementRef, inject, signal } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, inject, signal } from '@angular/core';
 import { SliderItemComponent } from '../slider-item/slider-item.component';
 import { SlideDirective } from '../../directives/slide.directive';
 import { GetMoviesService } from '../../services/get-movies.service';
@@ -20,16 +20,31 @@ export class SliderComponent implements AfterViewInit{
   private startX = 0;
   private touchLength = 30;
 
-  constructor(private el : ElementRef){}
+  constructor(private el : ElementRef, private cdr: ChangeDetectorRef){
+
+    setInterval(()=>{this.moveRight()},3000);
+  }
   
   initSlides(){
     this.slides.set(this.el.nativeElement.querySelectorAll('.slide'));
   }
 
   ngAfterViewInit(){
+
     this.movieService.getPopularMovies().subscribe( data => {
-      this.movies = data.results;
+      let tmp: Movie[] = data.results;
+      this.movies.push(...tmp.slice(0, 4));
     });
+    this.movieService.getPopularTv().subscribe( data => {
+      let tmp: Movie[] = data.results;
+      this.movies.push(...tmp.slice(0, 4));
+    });
+    this.movieService.getPopularAnime().subscribe( data => {
+      let tmp: Movie[] = data.results;
+      this.movies.push(...tmp.slice(0, 4));
+    });
+    
+    this.cdr.detectChanges();
   }
   moveRight(){
     this.currIndex.set((this.currIndex() + 1) % this.movies.length);
@@ -51,4 +66,6 @@ export class SliderComponent implements AfterViewInit{
     }
     
   }
+
+  
 }

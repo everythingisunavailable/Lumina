@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, effect, ElementRef, input } from '@angular/core';
+import {Directive, effect, ElementRef, input } from '@angular/core';
 
 @Directive({
   selector: '[appSlide]'
@@ -22,7 +22,7 @@ export class SlideDirective{
       
       for (let i = 0; i < this.slides().length; i++) {
         if (index == i) {
-          this.slides()[i].style = 'transform: translateX(0) rotateY(0);'; 
+          this.slides()[i].style = 'transform: translateX(0) rotateY(0);';
         }
         else if (i < index) {
           this.slides()[i].style = 'transform: translateX(7vw) rotateY(20deg);';

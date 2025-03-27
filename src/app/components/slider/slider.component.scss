@@ -2,6 +2,7 @@
     position: relative;
 
     .slider{
+        position: relative;
         box-sizing: border-box;
         width: 100%;
         height: 100vh;
@@ -19,19 +20,19 @@
 
     button{
         all: unset;
-        cursor: pointer;
-        height: 100%;
-        width: 10%;
         position:absolute;
         top: 0;
+        height: 100%;
+        width: 10%;
         transition: opacity 0.3s ease-out;
+        cursor: pointer;
         &:hover{
             opacity: 0.9;
         }
     }
     .left{
         left: 0;
-        background: linear-gradient(to right, rgb(0,0,0,0.8), transparent); 
+        background: linear-gradient(to right , rgb(0,0,0,0.8), transparent); 
     }
     .right{
         right: 0;

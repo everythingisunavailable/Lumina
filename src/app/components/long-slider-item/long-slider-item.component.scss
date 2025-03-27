@@ -1,0 +1,38 @@
+:host{
+    scroll-snap-align: start;
+}
+.slide{
+    height: 360px;
+    width: 240px;
+    margin-left: 0.5rem;
+    box-sizing: border-box;
+    background-color: transparent;
+    overflow: hidden;
+    border: 1px solid black;
+    position: relative;
+    
+    z-index: 0;
+    
+    
+    a{
+        position: relative;
+        display: block;
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+
+        .background{
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            transition: scale 0.5s ease;
+            z-index: -10;
+            background-size: cover;
+            
+            &:hover{
+                scale: 1.2;
+            }
+        }
+    }
+}

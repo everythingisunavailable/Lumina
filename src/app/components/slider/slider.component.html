@@ -1,4 +1,4 @@
-<div class="slider">
+<div class="slider" id="top">
     <div appSlide [slides]="slides()" [currIndex] = "currIndex()"  class="slide-wrapper" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
         @for (movie of movies; track $index) {
             <app-slider-item [movie]="movie" />

@@ -31,18 +31,18 @@ export class SliderComponent implements AfterViewInit{
 
   ngAfterViewInit(){
 
-    this.movieService.getPopularMovies().subscribe( data => {
-      let tmp: Movie[] = data.results;
-      this.movies.push(...tmp.slice(0, 4));
-    });
-    this.movieService.getPopularTv().subscribe( data => {
-      let tmp: Movie[] = data.results;
-      this.movies.push(...tmp.slice(0, 4));
-    });
-    this.movieService.getPopularAnime().subscribe( data => {
-      let tmp: Movie[] = data.results;
-      this.movies.push(...tmp.slice(0, 4));
-    });
+     this.movieService.getPopularMovies().subscribe( data => {
+       let tmp: Movie[] = data.results;
+       this.movies.push(...tmp.slice(0, 4));
+     });
+     this.movieService.getPopularTv().subscribe( data => {
+       let tmp: Movie[] = data.results;
+       this.movies.push(...tmp.slice(0, 4));
+     });
+     this.movieService.getPopularAnime().subscribe( data => {
+       let tmp: Movie[] = data.results;
+       this.movies.push(...tmp.slice(0, 4));
+     });
     
     this.cdr.detectChanges();
   }

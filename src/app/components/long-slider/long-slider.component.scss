@@ -13,6 +13,7 @@
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         padding-inline: 0.5rem;
+        padding-bottom: 3rem;
         &::-webkit-scrollbar{
             display: none;
         }

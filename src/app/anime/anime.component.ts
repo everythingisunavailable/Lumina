@@ -1,16 +1,16 @@
 import { AfterViewInit, Component, ElementRef, inject, signal, ViewChild } from '@angular/core';
-import { LongSliderComponent } from "../components/long-slider/long-slider.component";
 import { Movie } from '../models/movie.model';
 import { GetMoviesService } from '../services/get-movies.service';
 import { MovieItemComponent } from '../components/movie-item/movie-item.component';
+import { LongSliderComponent } from '../components/long-slider/long-slider.component';
 
 @Component({
-  selector: 'app-movie',
+  selector: 'app-anime',
   imports: [LongSliderComponent, MovieItemComponent],
-  templateUrl: './movie.component.html',
-  styleUrl: './movie.component.scss'
+  templateUrl: './anime.component.html',
+  styleUrl: './anime.component.scss'
 })
-export class MovieComponent implements AfterViewInit{
+export class AnimeComponent implements AfterViewInit{
   items = signal<Movie[]>([]);
   currPageIndex: number = 1;
   private service = inject(GetMoviesService);
@@ -18,7 +18,7 @@ export class MovieComponent implements AfterViewInit{
   @ViewChild('discover') discoverTop: ElementRef | undefined;
   
   constructor(){
-    this.getMoviesByPage(this.currPageIndex);
+    this.getAnimeByPage(this.currPageIndex);
   }
   ngAfterViewInit(): void {
     window.scrollTo({top: 0, behavior: 'smooth'});
@@ -29,25 +29,25 @@ export class MovieComponent implements AfterViewInit{
   prevPage():void{
     if (this.currPageIndex <= 1) return;
     this.currPageIndex --;
-    this.getMoviesByPage(this.currPageIndex);
+    this.getAnimeByPage(this.currPageIndex);
     const top = this.discoverTop?.nativeElement;
     top.scrollIntoView();
   }
   nextPage():void{
     this.currPageIndex ++;
-    this.getMoviesByPage(this.currPageIndex);
+    this.getAnimeByPage(this.currPageIndex);
     const top = this.discoverTop?.nativeElement;
     top.scrollIntoView();
   }
   resetPage():void{
     this.currPageIndex = 1;
-    this.getMoviesByPage(this.currPageIndex);
+    this.getAnimeByPage(this.currPageIndex);
     const top = this.discoverTop?.nativeElement;
     top.scrollIntoView();
   }
   
-  private getMoviesByPage(page:number):void{
-    this.service.discoverMovies(page).subscribe((data)=>{
+  private getAnimeByPage(page:number):void{
+    this.service.discoverAnime(page).subscribe((data)=>{
       this.items.set(data.results);
     });
   }

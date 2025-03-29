@@ -1,16 +1,16 @@
-<h2>Trending Movies This Week</h2>
-<app-long-slider [contentType]="'trending_movies'"/>
+<h2>Trending Tv-Shows This Week</h2>
+<app-long-slider [contentType]="'trending_tv'"/>
 
-<h2>Upcoming Movies</h2>
-<app-long-slider [contentType]="'upcoming_movies'"/>
+<h2>Upcoming Tv-Shows</h2>
+<app-long-slider [contentType]="'upcoming_tv'"/>
 
-<h2>Popular Movies</h2>
-<app-long-slider [contentType]="'popular_movies'" />
+<h2>Popular Tv-Shows</h2>
+<app-long-slider [contentType]="'popular_tv'" />
 
 <h2>Top Rated</h2>
-<app-long-slider [contentType]="'top_rated_movies'" />
+<app-long-slider [contentType]="'top_rated_tv'" />
 
-<h2>Browse All Movies</h2>
+<h2>Browse All Tv-Shows</h2>
 <div #discover class="discover" id="discover">
     @for (item of items() ; track $index) {
         <app-movie-item [movie]="item" />

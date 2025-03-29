@@ -4,6 +4,7 @@
     
     footer{
         width: 100%;
+        height: fit-content;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -12,38 +13,45 @@
         margin-top: 2rem;
         padding-top: 2rem;
 
-        background: linear-gradient(to top,rgba(255, 20, 145, 0.3) 1%, transparent);
+        border-top: 2px solid cyan;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        background: linear-gradient(to top,rgba(255, 20, 145, 0.3), transparent);
         
         .links{
             width: 100%;
+            height: fit-content;
             display: flex;
             justify-content: space-evenly;
-            align-items: center;
+            align-items: start;
             flex-wrap: wrap;
+            gap: 1rem;
 
-            .logo-container{
-                max-width: 10rem;
+            .logo{
+                width: 100%;
+                padding-block: 1rem;
+                height: fit-content;
                 display: flex;
-                flex-direction: column;
                 justify-content: center;
                 align-items: center;
-    
-                .logo{
-                    width: 100%;
-                    padding-block: 1rem;
-                    height: fit-content;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-            
-                    img{
-                        width: 80%;
-                    }
+        
+                img{
+                    width: 80%;
                 }
+            }
+
+            .logo-container{
+                max-width: 15rem;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
 
                 a{
                     transition: scale 0.2s ease-out;
                     opacity: 0.8;
+                    cursor: pointer;
                     &:hover{
                         opacity: 1;
                         scale: 1.1;
@@ -52,7 +60,9 @@
             }
             
             ul{
-                padding: 0;
+                padding-left: 0;
+                margin-block-start: 0;
+                height: 100%;
 
                 li{
                     margin: 0.5rem;
@@ -67,8 +77,10 @@
 
 
             .credit{
-                max-width: 10rem;
+                max-width: 12rem;
+                height: fit-content;
                 span{
+                    font-size: small;
                     opacity: 0.8;
                 }
             }

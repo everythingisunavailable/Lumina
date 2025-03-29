@@ -13,9 +13,52 @@
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         padding-inline: 0.5rem;
-        padding-bottom: 3rem;
+        margin-bottom: 3rem;
+        position: relative;
         &::-webkit-scrollbar{
             display: none;
         }
     }
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: 20%;
+        right: 0;
+        height: 30%;
+        width: 1;
+        box-shadow: 0 0 5rem 2rem cyan,
+        0 5rem 5rem 2rem rgb(255, 0, 195);
+        animation: glow 3s ease-in-out infinite;
+
+        @keyframes glow{
+            0%{
+                top: 20%;
+                box-shadow: 0 0 5rem 2rem cyan,
+                0 5rem 5rem 2rem rgb(255, 0, 195);
+            }
+            50%{
+                top: 10%;
+                box-shadow: 0 0 5rem 1.5rem cyan,
+                0 10rem 5rem 2.5rem rgb(255, 0, 195);
+            }
+            100%{
+                top: 20%;
+                box-shadow: 0 0 5rem 2rem cyan,
+                0 5rem 5rem 2rem rgb(255, 0, 195);
+            }
+        }
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 5rem;
+        mask: linear-gradient( to right, transparent, black);
+        backdrop-filter: blur(5px);
+        z-index: 10;
+    }
+
 }

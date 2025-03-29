@@ -11,7 +11,7 @@
                 @if (movie().name) {<span id="type">Tv Show</span> <span id="date">{{movie().first_air_date}}</span>}
                 <span id="rating">⭐{{movie().vote_average}}</span>
             </div>
-            <p>{{movie().overview}}</p>
+            <p>{{movie().overview.substring(0, 100)}}...</p>
             <div class="button-group">
                 <button id="wishlist">📌 add to wishlist</button>
                 <button id="watched">✔️ mark as watched</button>

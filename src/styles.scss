@@ -14,6 +14,7 @@ html,body {
     &::-webkit-scrollbar{
         display: none;
     }
+    scroll-behavior: smooth;
 }
 ul, ol{
     list-style: none;

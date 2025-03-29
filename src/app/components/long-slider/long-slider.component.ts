@@ -77,7 +77,18 @@ export class LongSliderComponent implements AfterViewInit {
            this.items = data.results;
          });
        }
-    
+       else if(this.contentType() == 'new_anime'){
+        this.movieService.getNewAnime().subscribe( data => {
+          this.items = data.results;
+          console.log(data.results);
+          
+        });
+       }
+       else if(this.contentType() == 'trending_anime'){
+        this.movieService.getTrendingAnime().subscribe( data => {
+          this.items = data.results;
+        });
+       }
     this.cdr.detectChanges();
   }
 

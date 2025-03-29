@@ -1,37 +1,48 @@
-nav{
-    position: fixed;
-    width: 15%;
-    height: 100vh;
-    background-color: rgb(30, 30, 30);
-    color: whitesmoke;
-    border-right: 2px solid rgb(50, 50, 50);
+:host{
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
+    nav{
+        position: fixed;
+        width: 15%;
+        height: 100vh;
+        background-color: rgb(30, 30, 30);
+        color: whitesmoke;
+        border-right: 2px solid rgb(50, 50, 50);
     
-    h1{
-        text-align: center;
-        color: turquoise;
-    }
-    .logo{
-        width: 100%;
-        padding-block: 1rem;
-        height: fit-content;
         display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img{
-            width: 80%;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        z-index: 100;
+        
+        h1{
+            text-align: center;
+            color: turquoise;
+        }
+        .logo{
+            width: 100%;
+            padding-block: 1rem;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            img{
+                width: 80%;
+            }
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            padding-block: 1rem;
+            border-bottom: 2px solid rgb(50, 50, 50);
+            border-top: 2px solid rgb(50, 50, 50);   
+        }
+    
+        //1100 width
+        @media only screen and (max-width: 1100px) {
+            background-color: rgb(30, 30, 30, 0.7);
+            backdrop-filter: blur(5px);
         }
     }
-    ul{
-        margin: 0;
-        padding: 0;
-        padding-block: 1rem;
-        border-bottom: 2px solid rgb(50, 50, 50);
-        border-top: 2px solid rgb(50, 50, 50);   
-    }
+    
 }

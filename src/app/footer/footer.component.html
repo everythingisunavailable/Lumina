@@ -4,14 +4,14 @@
             <div class="logo">
                 <img src="lumina-logo.png" alt="Lumina">
             </div>
-            <a href="#top"><u>⬆ Back to top</u></a>
+            <a (click)="scrollToTop()" ><u>⬆ Back to top</u></a>
         </div>
         <ul class="nav">
             <h4>Nav links</h4>
-            <li><a routerLink="home">Home</a></li>
-            <li><a routerLink="movie">Movie</a></li>
-            <li><a routerLink="tv">Tv-show</a></li>
-            <li><a routerLink="anime">Anime</a></li>
+            <li><a routerLink ="/">Home</a></li>
+            <li><a routerLink ="/movie">Movie</a></li>
+            <li><a routerLink ="/tv">Tv-show</a></li>
+            <li><a routerLink ="/anime">Anime</a></li>
         </ul>
         <ul class="contact">
             <h4>Contact</h4>
@@ -22,8 +22,10 @@
 
         <div class="credit">
             <h4>Credits</h4>
-            <a href="#"><h2>TMDB</h2></a>
-            <span>Thanks to <a href="https://themoviedb.org"><b>themoviedatabase.org</b></a> for providing the API for free</span>
+            <div class="logo">
+                <img src="tmdb-logo.svg" alt="the movie database">
+            </div>
+            <span>Thanks to <a href="https://themoviedb.org"><b>themoviedatabase.org</b></a> which is the source API for the information on this page.</span>
         </div>
 
     </div>

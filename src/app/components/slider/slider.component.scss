@@ -38,4 +38,8 @@
         right: 0;
         background: linear-gradient(to left, rgb(0,0,0,0.8), transparent);
     }
+
+    @media only screen and (max-width: 800px){
+        display: none;
+    }
 }

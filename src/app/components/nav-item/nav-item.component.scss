@@ -17,4 +17,20 @@ li{
         margin-left: 1rem;
         font-size: x-large;
     }
+
+    @media only screen and (max-width: 1100px){
+        height: fit-content;
+        .title{
+            display: none;
+        }
+
+        a{
+            
+            transition: scale 0.3s ease-out;
+            &:hover{
+                background-color: transparent;
+                scale: 1.3;
+            }
+        }
+    }
 }

@@ -40,8 +40,33 @@
     
         //1100 width
         @media only screen and (max-width: 1100px) {
-            background-color: rgb(30, 30, 30, 0.7);
+            background-color: rgb(30, 30, 30, 0.8);
             backdrop-filter: blur(5px);
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            border: none;
+            border-bottom: 2px solid cyan;
+            border-bottom-right-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+
+            .logo{
+                display: none;
+            }
+
+            .nav-group-top, .top, .bottom{
+                display: flex;
+                flex-direction: row;
+                border: none;
+            }
+            .top, .bottom{
+                border-right: 2px solid rgb(50, 50, 50);
+            }
+
+            .nav-group-bottom{
+                border: none;
+            }
         }
     }
     

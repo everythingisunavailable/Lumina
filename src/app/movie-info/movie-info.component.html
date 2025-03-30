@@ -1,0 +1,39 @@
+<div class="container">
+    @if (!movie()) {
+        <h1>Page Not Found</h1>
+    }
+    @if(movie()){
+        <div class="background" style="background-image: url('https://image.tmdb.org/t/p/w780{{movie()?.backdrop_path}}');">
+            <div class="linear-gradient-wrapper">
+                <div class="details">
+                    <div class="poster"><img src="https://image.tmdb.org/t/p/w500{{movie()?.poster_path}}" alt="poster"></div>
+                    <div class="info">
+                        <h1>{{movie()?.title || movie()?.name}}</h1>
+
+                        <div class="bottom">
+                            
+                            <div class="stats">
+                                @if (movie()?.title) { <span id="type">Movie</span> <span>|</span> <span id="date">{{movie()?.release_date}}</span> }
+                                @if (movie()?.name) { <span id="type">Tv-Show</span> <span>|</span> <span id="date">{{movie()?.first_air_date}}</span> }
+                                <span>|</span>
+                                <span id="rating">⭐{{movie()?.vote_average}} ({{movie()?.vote_count}})</span>
+                            </div>
+                            <div class="genre">
+                                @for (genre of movie()?.genres; track $index) {
+                                    <span>{{genre.name}}</span>
+                                }
+                            </div>
+                            <div class="button-group">
+                                <button id="wishlist">📌 add to wishlist</button>
+                                <button id="watched">✔️ mark as watched</button>
+                                <button id="info">ⓘ IMDB</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

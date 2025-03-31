@@ -3,4 +3,12 @@
         <div class="background" style="background-image: url('https://image.tmdb.org/t/p/w500{{movie().poster_path}}')">
         </div>
     </a>
+    <span id="rating">⭐{{movie().vote_average}}</span>
+    @if (movie().title) {
+        <span id="kind">MOVIE</span>
+    }
+    @if (movie().name) {
+        <span id="kind">TV</span>
+    }
+    <span id="title">{{movie().name || movie().title}}</span>
 </div>

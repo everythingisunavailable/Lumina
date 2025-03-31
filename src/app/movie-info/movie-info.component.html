@@ -26,13 +26,25 @@
                             <div class="button-group">
                                 <button id="wishlist">📌 add to wishlist</button>
                                 <button id="watched">✔️ mark as watched</button>
-                                <button id="info">ⓘ IMDB</button>
+                                <button id="info" (click)="goToImdb()">ⓘ IMDB</button>
                             </div>
 
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="content">
+            <div class="content-wrapper">
+                <h1>About</h1>
+                <p>{{movie()?.overview}}</p>
+            </div>
+            @if (trailerUrl) {
+                <div class="content-wrapper">
+                    <h1>Trailer</h1>
+                    <iframe [src]="trailerUrl" frameborder="0" allowfullscreen></iframe>
+                </div>
+                }
         </div>
 
     }

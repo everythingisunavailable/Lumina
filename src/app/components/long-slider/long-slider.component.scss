@@ -56,8 +56,8 @@
         top: 0;
         height: 100%;
         width: 5rem;
-        mask: linear-gradient( to right, transparent, black);
-        backdrop-filter: blur(5px);
+        mask: linear-gradient( to right, transparent, black, black);
+        backdrop-filter: blur(7px);
         z-index: 10;
     }
 

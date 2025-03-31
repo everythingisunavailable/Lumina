@@ -37,4 +37,46 @@
             }
         }
     }
+    span{
+        position: absolute;
+        box-sizing: border-box;
+        z-index: 10;
+
+        margin: 0.1rem;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.7);
+        font-weight: bolder;
+        font-size: medium;
+
+        @media only screen and (max-width: 950px){
+            font-size: small;
+        }
+    }
+    #rating{
+        top: 0;
+        right: 0;
+    }
+    #kind{
+        top: 0;
+        left: 0;
+    }
+    #title{
+        width: 100%;
+        margin: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 0;
+        text-align: center;
+        font-size: large;
+        font-weight: bold;
+        padding-top: 1rem;
+        color: orange;
+        background: linear-gradient(transparent, black, black);
+        transform: translateY(10rem);
+        transition: transform 0.2s ease-out;
+    }
+    &:hover #title{
+        transform: translateY(0);
+    }
 }

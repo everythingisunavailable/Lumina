@@ -1,3 +1,14 @@
+export interface Video {
+  id: string;
+  key: string;
+  name: string;
+  site: string;
+  type: string;
+  official: boolean;
+  published_at: string;
+}
+
+
 export interface Movie {
     id: number;
     title: string;
@@ -14,6 +25,8 @@ export interface Movie {
     genre_ids: number[];
     genres: Genre[];
     origin_country: string[];
+    videos: {results: Video[]};
+    imdb_id: string | null;
   }
   
   export interface Genre {

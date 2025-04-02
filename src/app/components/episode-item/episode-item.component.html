@@ -1,0 +1,13 @@
+<div class="container">
+    <a href="#">
+        <div class="image"><img src="https://image.tmdb.org/t/p/w300{{episode().still_path}}" alt="episode"></div>
+        <div class="name-overview">
+            <span id="name">{{episode().name}}</span>
+            <span id="overview">{{episode().overview}}</span>
+        </div>
+        <div class="runtime-rating">
+            <span id="run-time">⏱ {{episode().runtime}}</span>
+            <span id="rating">⭐{{episode().vote_average}}</span>
+        </div>
+    </a>
+</div>

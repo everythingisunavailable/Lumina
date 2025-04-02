@@ -46,6 +46,44 @@
                 </div>
                 }
         </div>
+        
+        @if (movie() && movie()?.credits && movie()?.credits?.cast?.length!) {
+            <h1>Top Cast</h1>
+            <div class="glow">
+                <div class="actor-wrapper">
+                    @for (actor of movie()?.credits?.cast; track $index) {
+                        <div class="actor">
+                            <img src="https://image.tmdb.org/t/p/w300/{{actor.profile_path}}" alt="{{actor.name}}">
+                            <span id="name">{{actor.name}}</span>
+                            <span id="playes">playes</span>
+                            <span id="char-name">{{actor.character}}</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+
+        @if (movie()?.name) {
+            <h1>Episodes</h1>
+            <div class="season-wrapper">
+                <select #select (change)="updateEpisodes(select.value)" name="seasons" id="seasons">
+                    @for (season of movie()?.seasons; track $index) {
+                        @if (season.name.toLowerCase().includes('season')) {
+                            <option value="{{season.season_number}}">{{season.name}}</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="episode-wrapper">
+                @for (season of seasons(); track $index) {
+                    @if (currentSeasonIndex() == $index + 1) {
+                        @for (episode of season.episodes; track $index) {
+                            <app-episode-item [episode] = episode />
+                        }
+                    }
+                }
+            </div>
+        }
 
     }
 </div>

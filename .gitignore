@@ -42,5 +42,4 @@ testem.log
 Thumbs.db
 
 # Personal
-src/app/services/
 TODO.TXT

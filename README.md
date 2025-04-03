@@ -1,6 +1,37 @@
+
+
+<p align="center">
+  <img src="public/lumina-logo.png" alt="Lumina Logo" width="70%">
+</p>
+
 # Lumina
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+Lumina is a movie discovery web app powered by [TMDB](https://themoviedb.org) and built with Angular. It allows users to browse a vast collection of movies and TV shows with detailed information, trailers, and ratings. Lumina delivers a smooth and dynamic user experience for all devices. Currently, it focuses on frontend functionality, fetching data directly from the TMDB API—backend features like user authentication and custom lists are planned for future updates.
+
+---
+
+## 🔧 Features
+- 🎬 Browse trending movies and TV shows  
+- 📄 View detailed information, including ratings, overviews, and trailers  
+- 🎭 Responsive design for all devices  
+- 🚀 Powered by TMDB API 
+### 🌱 This is my first project using Angular and TypeScript, where I am learning as I go.
+
+## 🚀 Screenshots
+
+<p align="center">
+  <img src="public/homepage.png" alt="Homepage Screenshot" width="80%">
+</p>
+<p align="center">
+  <img src="public/homepage-2.png" alt="Homepage Screenshot" width="80%">
+</p>
+<p align="center">
+  <img src="public/movie.png" alt="Homepage Screenshot" width="80%">
+</p>
+<p align="center">
+  <img src="public/small.png" alt="Movie Details Screenshot" width="50%">
+</p>
+
 
 ## Development server
 

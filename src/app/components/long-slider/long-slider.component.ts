@@ -58,7 +58,7 @@ export class LongSliderComponent implements AfterViewInit {
          });
        }
        else if(this.contentType() == 'upcoming_tv'){
-         this.movieService.getUpcoming().subscribe( data => {
+         this.movieService.getUpcomingTv().subscribe( data => {
            this.items = data.results;
          });
        }

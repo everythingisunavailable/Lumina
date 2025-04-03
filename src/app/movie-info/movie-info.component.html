@@ -74,14 +74,17 @@
                     }
                 </select>
             </div>
-            <div class="episode-wrapper">
-                @for (season of seasons(); track $index) {
-                    @if (currentSeasonIndex() == $index + 1) {
-                        @for (episode of season.episodes; track $index) {
-                            <app-episode-item [episode] = episode />
+
+            <div class="episode-glow">
+                <div class="episode-wrapper">
+                    @for (season of seasons(); track $index) {
+                        @if (currentSeasonIndex() == $index + 1) {
+                            @for (episode of season.episodes; track $index) {
+                                <app-episode-item [episode] = episode />
+                            }
                         }
                     }
-                }
+                </div>
             </div>
         }
 

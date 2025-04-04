@@ -9,6 +9,14 @@ export class GetMoviesService {
   private key = '';  //API key form TMDB required
   constructor(private http: HttpClient) {}
 
+  search(query: string, page: number): Observable<any>{
+    const url = `https://api.themoviedb.org/3/search/multi?query=${query}&sort_by=revenue.desc&page=${page}&api_key=${this.key}`;
+
+    const apiData:Observable<any> = this.http.get<any>(url);
+    
+    return apiData;
+  }
+
   getMovie(movieId: string | null): Observable<any>{
     const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${this.key}&append_to_response=videos,credits`;
 

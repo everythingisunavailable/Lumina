@@ -13,14 +13,14 @@ export class MovieItemComponent {
   constructor(public route: ActivatedRoute, private router: Router){};
 
   goToMovie(): void{
-    if (!this.route.snapshot.url[0] || this.route.snapshot.url[0].path == 'anime') {      
+    if (!this.route.snapshot.url[0] || this.route.snapshot.url[0].path == 'anime' || this.route.snapshot.url[0].path == 'search') {      
       if (this.movie().name) {
         //redirect with category tv
         this.router.navigate(['tv/', this.movie().id]);
         console.log('searching in category tv');
       }
       if (this.movie().title) {
-        //redirect category movie
+        //redirect with category movie
         this.router.navigate(['movie/', this.movie().id]);
       }
     }

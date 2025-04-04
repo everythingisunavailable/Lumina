@@ -1,6 +1,6 @@
 <div class="container">
     @if (!movie()) {
-        <h1>Page Not Found</h1>
+        <h1>Loading...</h1>
     }
     @if(movie()){
         <div class="background" style="background-image: url('https://image.tmdb.org/t/p/w780{{movie()?.backdrop_path}}');">

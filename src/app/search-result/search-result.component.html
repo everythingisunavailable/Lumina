@@ -1,0 +1,19 @@
+<div class="search">
+    <form (submit)="$event.preventDefault(); search(searchText.value)">
+        <input #searchText type="text" placeholder="search...">
+        <button>Search</button>
+    </form>
+    <button (click)="searchText.value = ''; clearPage()">Clear</button>    
+</div>
+<div #discover class="discover" id="discover">
+    @for (item of movies() ; track $index) {
+        <app-movie-item [movie]="item" />
+    }
+</div>
+
+<div class="page-nav">
+    <button id="start" (click)="resetPage()"><<</button>
+    <button id="prev-page" (click)="prevPage()"> < </button>
+    <span id="curr-page"> {{currPageIndex}} </span>
+    <button id="next-page" (click)="nextPage()"> > </button>
+</div>

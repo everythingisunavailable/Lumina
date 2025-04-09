@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "baseHref": "/",
             "outputPath": "dist/lumina",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -26,6 +27,8 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/assets",
+              "src/assets/CNAME",
               {
                 "glob": "**/*",
                 "input": "public"

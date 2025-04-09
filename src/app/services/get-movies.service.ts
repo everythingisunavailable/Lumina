@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GetMoviesService {
-  private key = '';  //API key form TMDB required
+  private key = environment.apiKey;  //API key form TMDB required
   constructor(private http: HttpClient) {}
 
   search(query: string, page: number): Observable<any>{

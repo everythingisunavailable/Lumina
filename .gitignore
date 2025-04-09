@@ -41,6 +41,8 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Environment
+src/environments/environment.prod.ts
+
 # Personal
-src/app/services/
 TODO.TXT    

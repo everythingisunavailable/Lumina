@@ -80,8 +80,6 @@ export class LongSliderComponent implements AfterViewInit {
        else if(this.contentType() == 'new_anime'){
         this.movieService.getNewAnime().subscribe( data => {
           this.items = data.results;
-          console.log(data.results);
-          
         });
        }
        else if(this.contentType() == 'trending_anime'){

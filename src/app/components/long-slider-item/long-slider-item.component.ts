@@ -18,7 +18,6 @@ export class LongSliderItemComponent{
       if (this.movie().name) {
         //redirect with category tv
         this.router.navigate(['tv/', this.movie().id]);
-        console.log('searching in category tv');
       }
       if (this.movie().title) {
         //redirect category movie

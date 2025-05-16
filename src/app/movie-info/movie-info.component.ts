@@ -41,7 +41,6 @@ export class MovieInfoComponent implements OnInit, AfterViewInit{
 
   updateEpisodes(value: string){
     this.currentSeasonIndex.set(parseInt(value));
-    console.log(this.currentSeasonIndex());
   }
 
   ngAfterViewInit(): void {
@@ -60,7 +59,6 @@ export class MovieInfoComponent implements OnInit, AfterViewInit{
       }
     });
     this.seasons.set(tmp); 
-    console.log(this.seasons());
   }
 
   ngOnInit(): void {

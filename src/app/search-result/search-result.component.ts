@@ -26,7 +26,6 @@ export class SearchResultComponent {
       this.service.search(query, this.currPageIndex).subscribe( data => {
         this.movies.set(data.results);
         this.totalPages = data.total_pages;
-        console.log(data);
       });
     }
   }
@@ -61,8 +60,6 @@ export class SearchResultComponent {
   private getMoviesByPage(page:number):void{
     this.service.search(this.searchQuery,page).subscribe((data)=>{
       this.movies.set(data.results);
-      console.log(data);
-      
     });
   }
 }

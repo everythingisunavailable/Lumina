@@ -30,7 +30,6 @@ export class GetMoviesService {
 
     apiData.subscribe( (data)=>{
       if (data) sessionStorage.setItem(`movie_${movieId}`, JSON.stringify(data));
-        console.log(data);
     });
 
     return apiData;
@@ -48,7 +47,6 @@ export class GetMoviesService {
 
     apiData.subscribe( (data)=>{
       if (data) sessionStorage.setItem(`movie_${movieId}`, JSON.stringify(data));
-        console.log(data);  
     });
 
     return apiData;
